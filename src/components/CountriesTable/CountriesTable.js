@@ -4,6 +4,7 @@ import {
 } from "@mui/icons-material";
 import styles from "./CountriesTable.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const orderBy = (countries, value, direction) => {
   if (direction === "asc") {
@@ -75,10 +76,12 @@ const CountriesTable = ({ countries }) => {
       </div>
 
       {orderedPopulation.map((country) => (
-        <div className={styles.row}>
-          <div className={styles.name}> {country.name.common}</div>
-          <div className={styles.population}>{country.population}</div>
-        </div>
+        <Link href={`/country/${country.fifa}`}>
+          <div className={styles.row}>
+            <div className={styles.name}> {country.name.common}</div>
+            <div className={styles.population}>{country.population}</div>
+          </div>
+        </Link>
       ))}
     </div>
   );
