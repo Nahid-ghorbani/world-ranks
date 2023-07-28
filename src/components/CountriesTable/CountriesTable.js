@@ -59,7 +59,7 @@ const CountriesTable = ({ countries }) => {
       <div className={styles.heading}>
         <button
           className={styles.heading_name}
-          onClick={() => setValueAndDirection("name")}
+          onClick={() => setValueAndDirection("name.common")}
         >
           <div>Name</div>
           <SortArrow />
@@ -76,7 +76,7 @@ const CountriesTable = ({ countries }) => {
 
       {orderedPopulation.map((country) => (
         <div className={styles.row}>
-          <div className={styles.name}>{country.name.common}</div>
+          <div className={styles.name}> {country.name.common}</div>
           <div className={styles.population}>{country.population}</div>
         </div>
       ))}
