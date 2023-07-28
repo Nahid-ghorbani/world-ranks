@@ -1,9 +1,15 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout/Layout";
+import SearchInput from "../components/SearchInput/SearchInput";
 
 export default function Home({ countries }) {
-  return <Layout>nahid</Layout>; 
+  return (
+    <Layout>
+      <div className={styles.counts}>Found {countries.length} countries.</div>
+      <SearchInput placeholder="Filter by Name, Region or SubRegion " />
+    </Layout>
+  );
 }
 
 export const getStaticProps = async () => {
